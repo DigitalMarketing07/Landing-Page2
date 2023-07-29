@@ -6,7 +6,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [quantity, setQuantity] = useState("");
   const [blank, setBlank] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -14,14 +14,14 @@ const Contact = () => {
     e.preventDefault();
 
     // Check if all input fields are valid before proceeding
-    if (name && phone && email && message) {
+    if (name && phone && email) {
       setIsLoading(true);
 
       const data = {
         Name: name,
         Email: email,
         Phone: phone,
-        Message: message,
+        Quantity: quantity,
       };
       axios
         .post(
@@ -34,8 +34,13 @@ const Contact = () => {
           setName("");
           setEmail("");
           setPhone("");
-          setMessage("");
-          setBlank("Thank You!! We will reach out to you. ");
+          setQuantity("");
+          setBlank("Thank You! We will reach out to you soon. ");
+
+          // Delay the redirection after showing the message
+          setTimeout(() => {
+            window.open("http://www.imperiorailing.com/", "_blank"); // Replace with your desired URL
+          }, 3000); // Change the delay time (in milliseconds) as needed
         })
         .catch((error) => {
           setIsLoading(false);
@@ -49,7 +54,7 @@ const Contact = () => {
 
   return (
     <>
-      <section className="c-wrapper">
+      <section className="c-wrapper" id="contact">
         <div className="paddings innerWidth flexCenter c-container">
           {/* Left Side */}
           <div className="flexColStart c-left">
@@ -89,22 +94,22 @@ const Contact = () => {
                 <div className="form-down form-container">
                   <input
                     type="email"
-                    placeholder="Enter Your Email"
+                    placeholder="example@email.com"
                     required
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                   />
                   <input
                     type="text"
-                    placeholder="Enter Your Subject"
-                    onChange={(e) => setMessage(e.target.value)}
-                    value={message}
+                    placeholder="QTY Required in RFT"
+                    onChange={(e) => setQuantity(e.target.value)}
+                    value={quantity}
                   />
                 </div>
                 <button className="button contact-btn" type="submit">
                   {isLoading ? "Submitting..." : "Submit"}
                 </button>
-                <span className="primaryText paddings blankspan">{blank}</span>
+                <span className="primaryText blankspan">{blank}</span>
               </form>
             </div>
           </div>
@@ -112,7 +117,7 @@ const Contact = () => {
           {/* Right Side */}
           <div className="flexEnd c-right">
             <div className="image-container">
-              <img src="./contact.jpg" alt="" />
+              <img src="./contact.jpeg" alt="" />
             </div>
           </div>
         </div>

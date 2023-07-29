@@ -11,7 +11,7 @@ const Hero = () => {
         {/* Left Side */}
         <div className="flexColStart hero-left">
           <div className="hero-title">
-            <div className="orange-circle" />
+            <div className="" />
             <motion.h1
               initial={{ y: "2rem", opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -20,9 +20,9 @@ const Hero = () => {
                 type: "spring",
               }}
             >
-              Change <br />
-              Your Railings, <br />
-              Not House
+              Less is More, <br />
+              Enjoy a Seamless <br />
+              Experience
             </motion.h1>
           </div>
 
@@ -37,27 +37,39 @@ const Hero = () => {
 
           <div className="flexCenter search-bar">
             {/* <input type="text" /> */}
-            <button className="button">Locate Us</button>
+            <button className="button">
+              <a href="#contact">Contact Us</a>
+            </button>
             {/* <HiLocationMarker color="var(--blue)" size={25} /> */}
           </div>
           <div className="flexCenter stats">
             <div className="flexColCenter stat">
               <span>
-                <CountUp start={8800} end={9000} duration={4} />
+                <CountUp
+                  start={8800}
+                  end={9000}
+                  duration={4}
+                  className="hero-number"
+                />
                 <span>+</span>
               </span>
               <span className="secondaryText">Premiun Products</span>
             </div>
             <div className="flexColCenter stat">
               <span>
-                <CountUp start={1950} end={2000} duration={4} />
+                <CountUp
+                  start={1950}
+                  end={2000}
+                  duration={4}
+                  className="hero-number"
+                />
                 <span>+</span>
               </span>
               <span className="secondaryText">Happy Customer</span>
             </div>
             <div className="flexColCenter stat">
               <span>
-                <CountUp end={28} />
+                <CountUp end={28} className="hero-number" />
                 <span>+</span>
               </span>
               <span className="secondaryText">Award Winning</span>
@@ -76,7 +88,7 @@ const Hero = () => {
               type: "spring",
             }}
           >
-            <img src="./hero-image.png" alt="Building with glassess" />
+            <img src="./hero-image.jpg" alt="Building with glassess" />
           </motion.div>
         </div>
       </div>

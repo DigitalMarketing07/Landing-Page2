@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+import { AiFillAndroid, AiOutlineSafety } from "react-icons/ai";
+import { BiBulb } from "react-icons/bi";
+import { HiOutlineHomeModern } from "react-icons/hi2";
+import { TbView360 } from "react-icons/tb";
+import { GiStrong } from "react-icons/gi";
+import { FcBusinessman } from "react-icons/fc";
+import {} from "react-icons/gi";
 import "./Value.css";
 import {
   Accordion,
@@ -12,17 +19,16 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import data from "../../utils/accordion";
 import { useScroll } from "framer-motion";
-// https://chat.openai.com/share/d57fa443-b1e6-401e-b9bb-0e179d332f12
 
 const Value = () => {
   return (
     <>
-      <section className="v-wrapper">
+      <section className="v-wrapper" id="values">
         <div className="paddings innerWidth flexCenter v-container">
           {/* Left Side */}
           <div className="v-left">
             <div className="image-container">
-              <img src="./value.png" alt="" />
+              <img src="./value.jpg" alt="" />
             </div>
           </div>
 
@@ -36,43 +42,58 @@ const Value = () => {
               We believe a good place to live can your life better
             </span>
 
-            <Accordion
-              className="accordion"
-              allowMultipleExpanded={false}
-              preExpanded={[0]}
-            >
-              {data.map((item, i) => {
-                const [className, setClassName] = useState(null);
-                return (
-                  <AccordionItem
-                    className={`accordionItem ${className}`}
-                    key={i}
-                    uuid={i}
-                  >
-                    <AccordionItemHeading>
-                      <AccordionItemButton className="flexCenter accordionButton">
-                        <AccordionItemState>
-                          {({ expanded }) =>
-                            expanded
-                              ? setClassName("expanded")
-                              : setClassName("collapsed")
-                          }
-                        </AccordionItemState>
-                        <div className="flexCenter icon">{item.icon}</div>
-                        <span className="primaryText">{item.heading}</span>
-                        <div className="flexCenter icon">
-                          <MdOutlineArrowDropDown size={20} />
-                        </div>
-                      </AccordionItemButton>
-                    </AccordionItemHeading>
-
-                    <AccordionItemPanel>
-                      <p className="secondaryText">{item.detail}</p>
-                    </AccordionItemPanel>
-                  </AccordionItem>
-                );
-              })}
-            </Accordion>
+            <div className="value-container">
+              <div className="flexRowStart value-provider">
+                <div className="flexCenter value-icon">
+                  <FcBusinessman />
+                </div>
+                <div className="flexColStart value-right">
+                  <span className="valuePrimary">
+                    {" "}
+                    Transparency meets strength
+                  </span>
+                  <span className="secondaryText">
+                    Experience the perfect balance of safety and aesthetics as
+                    our glass railings seamlessly blend transparency with robust
+                    durability, adding a touch of sophistication to your spaces.
+                  </span>
+                </div>
+              </div>
+              <div className="flexRowStart value-provider">
+                <div className="flexCenter value-icon">
+                  <TbView360 />
+                </div>
+                <div className="flexColStart value-right">
+                  <span className="valuePrimary">
+                    {" "}
+                    Clear views, sturdy support
+                  </span>
+                  <span className="secondaryText">
+                    Unveil breathtaking vistas and enjoy unobstructed panoramas
+                    without compromising on safety, thanks to our reliable and
+                    visually appealing glass railing solutions.
+                  </span>
+                </div>
+              </div>
+              <div className="flexRowStart value-provider">
+                <div className="flexCenter value-icon">
+                  <HiOutlineHomeModern />
+                </div>
+                <div className="flexColStart value-right">
+                  <span className="valuePrimary"> The modern touch</span>
+                  <span className="secondaryText">
+                    Embrace contemporary design with our glass railings that
+                    effortlessly complement any architectural style, offering a
+                    timeless appeal that never goes out of fashion.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div className="flexStart">
+              <button className="button value-btn">
+                <a href="#contact">Contact Us</a>
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -1,7 +1,28 @@
-.c-container{
-    justify-content: space-around;
-    gap: 1rem;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+
+.partner-container {
+  background: var(--black);
+  border-radius: 2rem 2rem 2rem 2rem;
 }
-.c-container>img{
+
+.c-container {
+  justify-content: space-around;
+  gap: 1rem;
+}
+.c-container > a > img {
+  width: 11rem;
+  height: 11rem;
+}
+.partner-container {
+  .primaryText {
+    color: white;
+    letter-spacing: 1px;
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .c-container > img {
     width: 9rem;
+  }
 }

@@ -18,18 +18,20 @@ const Header = () => {
           alt="logo of Imperio Railing Systems"
           width={100}
         />
-        <div className="flexCenter h-menu" style={getMenuStyles(menuOpened)}>
+        <div className="flexCenter h-menu">
           <button className="button">
-            <a href="">Contact Us</a>
+            <a href="https://goo.gl/maps/WS9LBcQF6RsXW9mHA" target="_blank">
+              Locate Us
+            </a>
           </button>
         </div>
 
-        <div
+        {/* <div
           className="menu-icon"
           onClick={() => setMenuOpened((prev) => !prev)}
         >
           <BiMenuAltRight size={30} />
-        </div>
+        </div> */}
       </div>
     </section>
   );
