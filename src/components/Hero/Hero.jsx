@@ -48,7 +48,7 @@ const Hero = () => {
                 <CountUp
                   start={300000}
                   end={500000}
-                  duration={4}
+                  duration={3}
                   className="hero-number"
                 />
                 <span>+</span>
