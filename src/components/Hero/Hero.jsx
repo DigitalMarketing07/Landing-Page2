@@ -46,14 +46,14 @@ const Hero = () => {
             <div className="flexColCenter stat">
               <span>
                 <CountUp
-                  start={8800}
-                  end={9000}
+                  start={300000}
+                  end={500000}
                   duration={4}
                   className="hero-number"
                 />
                 <span>+</span>
               </span>
-              <span className="secondaryText">Premiun Products</span>
+              <span className="secondaryText">Running Feet</span>
             </div>
             <div className="flexColCenter stat">
               <span>
@@ -65,14 +65,14 @@ const Hero = () => {
                 />
                 <span>+</span>
               </span>
-              <span className="secondaryText">Happy Customer</span>
+              <span className="secondaryText">Happy Customers</span>
             </div>
             <div className="flexColCenter stat">
               <span>
-                <CountUp end={28} className="hero-number" />
+                <CountUp end={45} className="hero-number" />
                 <span>+</span>
               </span>
-              <span className="secondaryText">Award Winning</span>
+              <span className="secondaryText">Cities</span>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ const Hero = () => {
               type: "spring",
             }}
           >
-            <img src="./hero-image.jpg" alt="Building with glassess" />
+            <img src="./hero-image_11zon.jpg" alt="Building with glassess" />
           </motion.div>
         </div>
       </div>
